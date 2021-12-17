@@ -1,21 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS_PLUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-
+            <div class="wrapper-row">
+                <div class="logo"><a class='logo__link' href="#">LOGO</a></div>
+                <nav class="nav">
+                    <ul class="menu">
+                        <li class="menu__item"><a href="" class="menu__link">Element1</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Element2</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Element3</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Element4</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Element5</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Element6</a></li>
+                    </ul>
+                </nav>
+                <div class="basket">
+                    <img src="img/header/basket.png" alt="basket">
+                </div>                
+            </div>
+        </div>
+        <div class="menu-button">
+            <div class="menu-button__line"></div>
+            <div class="menu-button__line"></div>
+            <div class="menu-button__line"></div>
         </div>
     </header>
-    <main>
+    <main class="main">
         <div class="container">
-            
+            <div class="main__wrapper-row wrapper-row">
+                <div class="item">
+                    <img src="img/Rick.jpg" alt="" class="item__img">
+                    <div class="item__info">
+                        <div class="item__info-name">Name: <br> 
+                            <span class="name">Rick Sanchez</span>
+                        </div>
+                        <div class="item__info-description">Description: <br>
+                            <span class="description">
+                                Безумный ученый, быстро адаптируется в новой ситуации, определяя сильные и слабые стороны врага. Способен на любые трансформации существующих объектов и созданию высокотехнологичного оружия практически из любых материалов.
+                            </span>
+                        </div>
+                        <div class="item__info-price">Price:
+                            <span class="price">100</span>$
+                        </div>
+                        <button class="item__info-added">добавить</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+    <script src="js/main.js"></script>
 </body>
 </html>

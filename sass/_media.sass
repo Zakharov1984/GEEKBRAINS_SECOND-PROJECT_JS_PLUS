@@ -1,7 +1,40 @@
-
+@media (min-width: 576px)
+    .container
+        max-width: 540px 
     
-    
-    
+//-------------------------------------------------
+@media (min-width: 768px)
+    .container
+        max-width: 720px
+    .header
+        height: auto
+    .logo
+        margin-right: 25px
+    .nav
+        width: auto
+        position: static
+        flex-direction: row
+        height: auto
+    .menu
+        flex-direction: row
+        background: none
+        &__link
+            padding: 20px 14px
+            font-size: 15px
+            font-weight: 500
+            line-height: 1
+    .menu-button
+        display: none
+    .basket
+        display: flex
+        margin-left: 25px
+    .main
+        padding: 67px 0 40px
+//------------------------------------------------------
+@media (min-width: 992px)
+    .container
+        max-width: 960px 
+//------------------------------------------------------
 @media (min-width: 1200px)
     .container
         max-width: 1140px
@@ -15,6 +48,7 @@
             font-size: 16px
             line-height: 1
             font-weight: 500
+//------------------------------------------------------
 @media (min-width: 1400px)
     .container
         max-width: 1320px

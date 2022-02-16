@@ -13,6 +13,7 @@ function Product(id, image, name, description, price) {
     this.description = description;
     this.price = price;
     this.counter = 0;
+    this.sumTotal;
 }
 
 const products = [

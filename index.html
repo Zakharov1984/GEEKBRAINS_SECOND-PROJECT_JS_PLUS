@@ -25,18 +25,22 @@
                         <li class="menu__item"><a href="" class="menu__link">Element6</a></li>
                     </ul>
                 </nav>
-                <div class="basket">
+                <div class="basket basket_hidden">
                     <img src="img/header/basket.png" alt="basket">
-                    <div class="basket__box">
+                    <div class="basket__box basket__box_active">
 <!--                         <div class="basket__box-info-text">
                             Добавленных товаров нет
                         </div> -->
                         <table class="table-items">
                             <tr class="table-items__header">
+                                <td>Удалить</td>
                                 <td>Название</td>
                                 <td>Количество</td>
                                 <td>Цена за 1шт.</td>
                                 <td>Итого</td>
+                            </tr>
+                            <tr class="table-items__total">
+                                <td class="table-items__total-sum" colspan="5">Общая сумма всех товаров: <span>0</span></td>
                             </tr>
                         </table>
                     </div>

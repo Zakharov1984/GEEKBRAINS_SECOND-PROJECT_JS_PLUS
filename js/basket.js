@@ -3,6 +3,7 @@ let tableElement = document.querySelector('.table-items');
 let totalSumItemTable = document.querySelector('.table-items__total');
 let deleteBasketItemElements;
 let totalSumAlletems = 0;
+let counterAllGoodsElement = document.querySelector('.basket__counter-goods');
 
 /* document.querySelector('.basket').addEventListener('click', event => {
     document.querySelector('.basket__box').classList.toggle('basket__box_hidden');
@@ -67,6 +68,7 @@ function addItemInBasket(itemObject) {
     deleteBasketItemElements = document.querySelectorAll('.table-items__item-delete');
     sumFinalPriceItem(itemObject);
     totalSumAlletemsFunction();
+    counterAllGoods();
 }
 
 /**
@@ -88,6 +90,14 @@ function totalSumAlletemsFunction() {
         sumAllItems = sumAllItems + element.sumTotal;
     })
     totalSumItemTable.querySelector('span').innerHTML = sumAllItems;
+}
+
+function counterAllGoods() {
+    let counterAllGoods = 0;
+    basketItems.forEach(element => {
+        counterAllGoods = counterAllGoods + element.counter;
+    })
+    counterAllGoodsElement.innerHTML = counterAllGoods;
 }
 
 

@@ -1,7 +1,7 @@
 let basketItems = [];
 let tableElement = document.querySelector('.table-items');
 let totalSumItemTable = document.querySelector('.table-items__total');
-let deleteBasketItemElements;
+let deleteBasketItemElements = [];
 let totalSumAlletems = 0;
 let counterAllGoodsElement = document.querySelector('.basket__counter-goods');
 
@@ -25,23 +25,29 @@ function addToCartButtons() {
 
 addToCartButtons();
 
-/**
- * Функция добавляет строку с разметкой товара карзины в родительский эелемент.
- * @param {*} itemObject - на вход принимается объект из массива соответствующий узлу в верстке.
- */
-function MarkupItemInBasket(itemObject) {
-    let MarkupItem =    `
-                        <tr class="table-items__item" id="${itemObject.id}">
-                            <td class="table-items__item-delete">Удалить товар(1шт)</td>
-                            <td class="table-items__item-name">${itemObject.name}</td>
-                            <td class="table-items__item-counter">${itemObject.counter}</td>
-                            <td class="table-items__item-price">${itemObject.price}</td>
-                            <td class="table-items__item-total">${itemObject.counter * itemObject.price}</td>
-                        </tr>
-                        `
-    totalSumItemTable.insertAdjacentHTML("beforebegin", MarkupItem);
-   
+function deleteItemInBasket() {
+    deleteBasketItemElements.forEach( function (element) {
+        element.addEventListener('click', event => {
+            /* event.stopPropagation();
+            if (products[event.target.parentNode.id].counter > 1) {
+                products[event.target.parentNode.id].counter -= 1;
+                document.querySelector(`[id="${event.target.parentNode.id}"] .table-items__item-counter`).innerHTML = itemObject.counter;
+                sumFinalPriceItem(products[event.target.parentNode.id]);
+                counterAllGoods();
+            } else {
+                products[event.target.parentNode.id].counter -= 1;
+                event.target.parentNode.remove();
+            } */
+            console.log('11');
+        })
+        
+    })
 }
+
+
+
+
+
 
 /**
  * Функция делает проверку на количество товара, 
@@ -69,6 +75,25 @@ function addItemInBasket(itemObject) {
     sumFinalPriceItem(itemObject);
     totalSumAlletemsFunction();
     counterAllGoods();
+    deleteItemInBasket();
+}
+
+/**
+ * Функция добавляет строку с разметкой товара карзины в родительский эелемент.
+ * @param {*} itemObject - на вход принимается объект из массива соответствующий узлу в верстке.
+ */
+ function MarkupItemInBasket(itemObject) {
+    let MarkupItem =    `
+                        <tr class="table-items__item" id="${itemObject.id}">
+                            <td class="table-items__item-delete">Удалить товар(1шт)</td>
+                            <td class="table-items__item-name">${itemObject.name}</td>
+                            <td class="table-items__item-counter">${itemObject.counter}</td>
+                            <td class="table-items__item-price">${itemObject.price}</td>
+                            <td class="table-items__item-total">${itemObject.counter * itemObject.price}</td>
+                        </tr>
+                        `
+    totalSumItemTable.insertAdjacentHTML("beforebegin", MarkupItem);
+   
 }
 
 /**
@@ -92,6 +117,9 @@ function totalSumAlletemsFunction() {
     totalSumItemTable.querySelector('span').innerHTML = sumAllItems;
 }
 
+/**
+ * Функция считает общее количество товаров в корзине.
+ */
 function counterAllGoods() {
     let counterAllGoods = 0;
     basketItems.forEach(element => {
@@ -101,15 +129,3 @@ function counterAllGoods() {
 }
 
 
-/* function deleteItemInBasket(object) {
-    deleteBasketItemElements = document.querySelectorAll('.table-items__item-delete');
-    deleteBasketItemElements.forEach(element => {
-        element.addEventListener('click', event => {
-            if (basketItems[event.target.parentNode.id].counter == 0) {
-                basketItems[event.target.parentNode.id].counter = 0;
-            } else {
-                basketItems[event.target.parentNode.id].counter -= 1;
-            }
-        })
-    })
-} */
